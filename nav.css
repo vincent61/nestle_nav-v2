@@ -1,0 +1,672 @@
+
+html {
+  position: relative;
+  font-size: 95%;
+  text-decoration-skip: ink; }
+  @media (min-width: 0.01em) {
+    html {
+      font-size: 60%; } }
+  @media (min-width: 15em) {
+    html {
+      font-size: 65%; } }
+  @media (min-width: 35em) {
+    html {
+      font-size: 67.5%; } }
+  @media (min-width: 60em) and (min-height: 30em) {
+    html {
+      font-size: 70%; } }
+  @media (min-width: 75em) and (min-height: 40em) {
+    html {
+      font-size: 75%; } }
+  @media (min-width: 90em) and (min-height: 50em) {
+    html {
+      font-size: 80%; } }
+  @media (min-width: 100em) and (min-height: 65em) {
+    html {
+      font-size: 90%; } }
+  html.touch {
+    -webkit-text-size-adjust: none; }
+
+
+.wrap {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1540px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 0 1rem; }
+  @media (min-width: 40em) {
+    .wrap {
+      padding: 0 2rem; } }
+  @media (min-width: 47.5em) {
+    .wrap {
+      padding: 0 2rem; } }
+  @media (min-width: 57.5em) {
+    .wrap {
+      padding: 0 5%; } }
+  @media (max-width: 600px) {
+    .wrap {
+      width: 90%; } }
+
+body {
+  font-family: 'NStext', helvetica, arial, san-serif;
+  font-size: 1.4em;
+  color: #6b6159;
+  font-weight: 400;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.25); }
+
+body {
+  z-index: 1;
+  margin: 0 auto;
+  max-width: none; }
+  @media screen {
+    body {
+      background: white; } }
+.search-site {
+  position: relative;
+  float: right;
+  margin: 2.5em 0 0 0; }
+  .search-site input[type=text] {
+    color: #877b71;
+    margin: 0 0 0 0;
+    font-size: 0.85em !important;
+    padding: 0.55em 3.25em 0.7em 0.55em;
+    border: 0;
+    border-bottom: 1px solid #f0eeed; }
+  .search-site *[type=submit] {
+    position: absolute;
+    right: 0em;
+    top: 0.5em;
+    height: 1.3em;
+    width: 1.3em;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    opacity: 0.7;
+    background: url("icon-search-dark.png") no-repeat center center;
+    background-size: contain; }
+
+
+.nav-tools {
+  display: block;
+  width: 100%;
+  text-align: right; }
+  .nav-tools a {
+    display: inline-block; }
+  .nav-tools .country a {
+    display: inline-block;
+    color: #4f4842;
+    background: white; }
+    .nav-tools .country a:hover {
+      background: #f0eeed; }
+    .nav-tools .country a img {
+      display: inline;
+      padding-left: 5px; }
+  .nav-tools .contact a {
+    display: inline-block;
+    background: #4f4842;
+    background: #796E65;
+    color: #f0eeed; }
+    .nav-tools .contact a:hover {
+      background: #4f4842; }
+  .nav-tools .country {
+    background: white;
+    padding-right: 0.5em; }
+  .nav-tools a.language {
+    display: inline-block;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    text-decoration: none;
+    background: white; }
+    .nav-tools a.language:hover {
+      background: #f0eeed !important; }
+  .nav-tools ul {
+    max-width: 100%; 
+    margin-top: 0px;}
+  .nav-tools li {
+    display: inline-block;
+    margin-left: 1px; }
+    .nav-tools li a {
+      font-size: 0.8em;
+      background: #f7f6f5;
+      padding: 0.4em 1.5em;
+      color: #4f4842; }
+      .nav-tools li a:hover {
+        background: #e4e1df; }
+  .nav-tools li:first-child a {
+    border-left: 1px solid white; }
+
+.window-curve {
+  position: absolute;
+  margin-top: -21px;
+  height: 21px; }
+
+.nav-main {
+  clear: left;
+  display: block;
+  width: 100%;
+  margin: 0 0 0.8em 0; 
+position: relative;
+}
+  .nav-main .icon-home {
+    position: relative;
+    top: 1px;
+    padding: 0.5em 0 1em 0.5em;
+    display: inline; }
+    .nav-main .icon-home:hover {
+      background: none; }
+  .nav-main .icon-home img {
+    display: inline; }
+  .nav-main ul {
+    max-width: 100%;
+    margin: 0;
+    background: #f0eeed;
+    border-top-left-radius: 0;
+    padding: 0 1em; }
+  .nav-main li {
+    display: inline-block; }
+    .nav-main li a {
+      display: inline-block;
+      padding: 0.7em 0.7vw;
+      font-size: 1em;
+      color: #4f4842;
+      text-decoration: none; }
+
+
+
+.kitkat-menu {
+  margin-top: 2.5em;
+  display: block;
+  float: right;
+  width: 20px;
+  cursor: pointer;
+}
+
+@media (min-width: 955px) {
+    .kitkat-menu {
+      display: none; } }
+
+body.about .nav-about, body.society .nav-society, body.landing-stories .nav-stories, body.careers .nav-careers, body.brands .nav-brands {
+  background: #dddad7; }
+
+body.navgap .nav-main ul {
+  margin-bottom: 0.8em !important; }
+
+.header-site-left {
+  display: block;
+  width: 20%;
+  height: 100%;
+  position: fixed;
+  background: #f0eeed;
+  border-radius: 0 !important; }
+
+.nav-left .header-site-left .wrap {
+  margin: 0;
+  padding: 1.5em 2em 2em 1.2em; }
+
+.nav-lines .window-curve {
+  display: none; }
+
+.nav-container {
+  background: #f0eeed;
+  background: #f9f9f8;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1540px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  border-radius: 0 !important; }
+  
+
+.nav-padding {
+  padding: 1em 2em 0em 2em; }
+
+.mega-menu {
+  display: none;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  width: 100%; }
+
+
+
+ul.ul-reset.nav-demo1 {
+  display: none; }
+
+ul.ul-reset.nav-demo1.clicked {
+  display: block !important; }
+
+.cta-bar {
+  clear: left;
+  background: #e7e4e2;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  margin-bottom: 0;
+  text-align: right; }
+  .cta-bar a.button {
+    margin: 0;
+    background: #796E65;
+    color: white;
+    font-family: NStext;
+    font-size: 0.9em; }
+
+.mega-cta {
+  display: inline-block;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  background: white;
+  border-radius: 1em 1em 0 0;
+  text-align: left; }
+  .mega-cta a:hover {
+    color: black;
+    background: #fcfbfb !important;
+    border-radius: 1em 1em 0 0 !important; }
+  .mega-cta img {
+    float: right;
+    margin-top: 8px; }
+  .mega-cta .cta-text {
+    width: 200px; }
+  .mega-cta .mega-cta--major {
+    color: #4f4842;
+    font-weight: bold; }
+  .mega-cta .mega-cta--minor {
+    color: #4f4842;
+    font-size: 0.8em; }
+
+.mega-cta2 {
+  display: inline-block;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  background: white;
+  border-radius: 0;
+  text-align: left; }
+  .mega-cta2 a {
+    padding: 0.5em !important; }
+    .mega-cta2 a:hover {
+      color: black;
+      background: #fcfbfb !important;
+      border-radius: 0 !important; }
+  .mega-cta2 img {
+    float: right;
+    margin-top: 2px;
+    margin-right: 2px; }
+  .mega-cta2 .cta-text {
+    width: 200px; }
+  .mega-cta2 .mega-cta--major {
+    color: #4f4842;
+    font-weight: bold; }
+  .mega-cta2 .mega-cta--minor {
+    color: #4f4842;
+    font-size: 0.8em; }
+
+.mega-cta3 {
+  display: inline-block;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  background: #485CC7;
+  border-radius: 0;
+  text-align: left; }
+  .mega-cta3 a {
+    color: white;
+    padding: 0.5em !important; }
+    .mega-cta3 a:hover {
+      background: #fcfbfb !important;
+      border-radius: 0 !important; }
+  .mega-cta3 img {
+    float: right;
+    margin-top: 3px;
+    padding-right: 6px; }
+  .mega-cta3 .cta-text {
+    width: 200px; }
+  .mega-cta3 .mega-cta--major {
+    color: #4f4842;
+    color: white;
+    font-weight: bold; }
+  .mega-cta3 .mega-cta--minor {
+    color: #4f4842;
+    color: white;
+    font-size: 0.8em; }
+
+.mega-menu h3 {
+  color: #4f4842;
+  margin: 0.25em 0 0.5em 0; }
+
+.mega-menu ul {
+  float: left;
+  margin-bottom: 1em;
+  margin-right: 0%;
+  width: 25%;
+  padding: 0; 
+  position: absolute;}
+
+.mega-menu ul:last-child {
+  margin-right: 0; }
+
+.nav-main .mega-menu li {
+  display: block;
+  width: 100%;
+  position: static; 
+  }
+
+.nav-main .mega-menu li a {
+  color: #796E65;
+  padding: 0.2em 0.2em;
+  }
+  @media (min-width: 100em) {
+    .nav-main .mega-menu li a {
+      padding: 0.2em .8em; } }
+  .nav-main .mega-menu li:hover {
+    background: #93877e;
+    }
+
+
+.mega-menu a:hover {
+  color: #2d6a91; }
+
+ul.ul-reset {
+  background: none;
+  border-radius: none; 
+  border-top: 1px solid #4f4842;
+}
+  ul.ul-reset li strong {
+    font-weight: 900 !important; }
+
+.droppable {
+  position: static; }
+
+.droppable > a:after {
+  content: "\f107";
+  content: "";
+  font-family: FontAwesome;
+  font-size: 16px;
+  padding-left: 6px;
+  position: relative;
+  top: -1px; }
+
+.mega-menu-opened  .mega-menu {
+  display: block; }
+
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.cf:after {
+  clear: both; }
+
+.nav-underlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  z-index: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: fixed; }
+
+.header-site {
+  position: relative;
+  z-index: 1; }
+  .header-site:after {
+    content: '';
+    display: table;
+    clear: both; }
+  .header-site a {
+    display: block;
+    text-decoration: none;
+    color: #fff; }
+  .header-site .masthead {
+    padding: 0; }
+    .header-site .masthead:after {
+      content: '';
+      display: table;
+      clear: both; }
+  .header-site img.logo {
+    display: block;
+    max-width: none;
+    margin: 0em 0 1.5em 0;
+    text-align: left;
+    width: 350px; }
+    @media (max-width: 100em) {
+      .header-site img.logo {
+        width: 280px; } }
+
+.nav-left img.logo {
+  padding-top: 0.3em;
+  margin-bottom: 1em;
+  width: 380px; }
+
+.search-site *[type=submit] {
+    position: absolute;
+    right: 0em;
+    top: 0.5em;
+    height: 1.3em;
+    width: 1.3em;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    opacity: 0.7;
+    background: url(img/icon-search-dark.png) no-repeat center center;
+    background-size: contain;
+}
+.bg-orange {
+    background-color: #D57800 !important;
+}
+
+.bg-green {
+    background-color: #73A039 !important;
+}
+
+.bg-purple {
+    background-color: #AC4FC6 !important;
+}
+
+.nav-sub{
+  margin-top: 30px;
+  max-width: 50%;
+  display: flex;
+}
+
+.nav-container{
+  overflow:hidden;
+}
+
+.hidden{
+  display:none;
+}
+
+
+.ul-reset{
+  margin-left: 23vw !important;
+  width: 35vw !important;
+  top: 0%;
+}
+
+.ul-reset .selected{
+  display: inline-block;
+}
+
+li.selected {
+    background: #93877e !important;
+}
+
+.data-depth-zero>li>a{
+    display: none;
+}
+
+.data-depth-zero>li.selected>a{
+    color: #93877e !important;
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    color: inherit !important;
+    background: #f9f9f8 !important
+}
+
+.data-depth-zero>li.selected {
+    background: inherit !important;
+}
+
+
+.data-depth-zero>li.selected>a:hover{
+    background: inherit;
+    color: inherit;
+}
+
+.data-depth-zero{
+  min-height: 19em;
+  position: relative !important;
+  margin-left: 0vw !important;
+  width: 20vw !important;
+  top: 0%;
+}
+
+.data-depth-zero li{
+  margin-left: 0vw !important;
+}
+
+.data-depth-one{
+  margin-left: 20vw !important;
+}
+
+
+.nav-sub {
+  margin-top: 30px;
+}
+
+#meta-description{
+    margin-top: 1%;
+    max-width: 90%;
+}
+
+.nav-wrapper{
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.nav-padding{
+  position: relative;
+}
+
+.ul-reset .parent{
+    font-size: 1.2em;
+    margin-left: -10px;
+    font-weight: bold;
+    margin-left: -10px !important;
+}
+.ul-reset li.parent a{
+    z-index: 120 !important;
+}
+
+
+
+
+.ul-reset  li.selected{
+    background: #d2cecd !important;
+}
+
+
+
+.ul-reset  li.selected.children{
+    background: #d2cecd url(https://www.nestlehealthscience.com/asset-library/PublishingImages/cerebral-palsy/arrow-button.png) no-repeat right !important;
+}
+
+
+
+  @media (max-width: 950px) {
+    .horizontal-nav {display: none; } 
+    .meta-mega {display: none; } 
+    .nav-wrapper {width: 100%;} 
+    .ul-reset{
+      margin-left: 25vw !important;
+      width: 30vw !important;
+      top: 0%;
+    }
+    .search-site {
+      display: none; 
+    } 
+
+    .data-depth-zero>li>a{
+      display: inherit;
+    }
+
+    .data-depth-zero>li.selected>a{
+        color: inherit !important;
+        display: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+    }
+    .fixed-div{
+      display: none; 
+    } 
+    .data-depth-zero>li.selected {
+        background: inherit !important;
+    }
+
+
+    .data-depth-zero>li.selected>a:hover{
+        background: inherit;
+        color: inherit;
+    }
+
+    .data-depth-zero{
+      min-height: 19em;
+      position: relative !important;
+      margin-left: 0vw !important;
+      width: 20vw !important;
+      top: 0%;
+    }
+
+    .data-depth-zero li{
+      margin-left: 0vw !important;
+    }
+
+   }
+.nav-sub{
+  margin-left: -16vw;
+}
+
+
+
+
+
+.ul-reset li:first-child{
+  border-bottom: 1px solid #f0eeed;
+
+}
+
+.data-depth-zero .selected{
+      background: inherit;
+    color: inherit;
+}
+
+.nav-sub .ul-reset.data-depth-zero{
+  border-top: 0px solid;
+}
+.nav-sub .ul-reset.data-depth-zero>li:first-child{
+    border-bottom: 0px solid #f0eeed;
+}
+.nav-sub .ul-reset.data-depth-zero>li>a{
+    background: #f9f9f8 !important;
+    color: #f9f9f8 !important;
+}
+    .nav-main .mega-menu li:hover>a {
+    color:white;
+}
+.children{
+    background: url(https://www.nestlehealthscience.com/asset-library/PublishingImages/cerebral-palsy/arrow-button.png) no-repeat right;
+    }
+
+.nav-main li a.clicked.selected{
+        background: #f9f9f8;
+        color: #796E65;
+}
+
+.ul-reset .parent span{
+    display: block;
+    font-size: 0.8em;
+    font-weight: 100;
+    }

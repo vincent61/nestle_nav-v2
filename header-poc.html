@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nestlé Global</title>
+  <link rel="stylesheet" type="text/css" href="nav.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="nav.js"></script>
+</head>
+
+<body>
+
+  <div class="header-site">
+
+    <div class="language-panel">
+      <div class="wrap">
+
+      </div>
+    </div>
+
+    <div class="wrap">
+
+      <nav class="nav-tools">
+        <ul>
+          <li class="country" style="padding-right:0; margin-right:0;"><a class="language-select" style="position: relative; background: #f0eeed;" href="#"><img src="img/icon-globe.png" style="width: 1em; position: absolute; left:0.5em; top: 0.42em;"> <span style="padding-left: 0.8em;">Nestlé
+          GLobal</span> <img src="img/icon-downarrow.png" class="select-arrow"></a><a style="padding-left: 0.5em; padding-right: 0.5em; background:  #f9f9f8;" class="language" href="#">FR</a><a style="background: #f9f9f8; padding-left:0.5em; padding-right: 0.5em;" class="language" href="#">GE</a></li><li style="margin-left:0;" class="contact"><a href=#">Contact us</a></li>
+        </ul>
+      </nav>
+
+      <div class="kitkat-menu">
+       <img src="img/menuicon2.png"> <span>MENU</span>
+     </div>
+
+     <div class="search-site" style="width: 15em;">
+      <input type="text" value=""> <input type="submit" value="">
+    </div>
+
+    <a href="#"><img class="logo" src="img/logofull.png"></a>
+
+  </div>
+
+  <div class="nav-underlay" style="display:none;"></div>
+  <nav class="nav-main" style="margin-bottom:0;">
+    <ul>
+      <div class="wrap">
+        <div class="horizontal-nav">
+          <li style="margin-left: -10px; margin-right: 1em;"><a class="icon-home" href="#" style="padding-left:0; "><img src="img/icon-home-dark.png" style="width: 20px;padding-left:0;margin-left:0;"></a></li>
+          <li><a class="nav-about droppable"   href="#" data-name="about-us">About us</a></li>
+          <li><a class="nav-stories droppable" href="#" data-name="our-stories">Our Stories</a></li>
+          <li><a class="nav-society droppable" href="#" data-name="nestle-in-society">Nestlé in Society</a></li>
+          <li><a class="nav-brands droppable" href="#" data-name="brands">Brands</a></li>
+          <li><a class="nav-r-d droppable" href="#" data-name="r-d">R&amp;D</a></li>
+          <li><a class="nav-ask-nestle droppable" href="#" data-name="ask-nestle">Ask Nestlé</a></li>
+          <div class="diffnav" style="float: right; margin-right: -1em; padding-top: 0.3em; font-size: 80%; font-weight: bold;">
+            <li><a class="nav-careers" href="#">Careers</a></li><li><a href="investors.php">Investors</a></li>
+            <li><a href="media.php" style="margin-right:0; padding-right:0;">Media</a></li>
+          </div>
+        </div>
+
+
+
+        <!-----------------Mega Menu Implementation---------------------->
+
+        <div class="mega-menu">
+          <div class="nav-container cf">
+            <div class="nav-padding">
+              <div class="meta-mega"><div id="meta-description"></div></div>
+              <div class="nav-wrapper">
+               <div class="nav-sub">
+                <ul class="ul-reset data-depth-zero" data-depth="0" style="margin-left: 0px !important;">
+                  <!--<h3>Nestlé in Society</h3>-->
+                  <li>
+                    <a href="#" id="about-us" data-title="About Us" data-description="Here is the description of the About Us page.">About us</a>
+                    
+                    <ul class="ul-reset data-depth-one hidden" data-depth="1"> 
+                      <li class="parent">
+                        <a href="#">About us<span style="">visit this section</span></a>
+                      </li>
+                      <li><a href="#">History</a>
+                       <ul class="ul-reset data-depth-two hidden" data-depth="2"> 
+                        <li class="parent"><a href="#">History <span style="
+                            ">visit this section</span></a></li>
+                        <li><a href="#">Company history</a>
+                          <ul class="ul-reset data-depth-three hidden" data-depth="3"> 
+                            <li class="parent"><a href="#">Company history <span style="
+                            ">visit this section</span></a></li>
+                            <li><a href="#">Sub-Nav child item 1</a></li>
+                            <li><a href="#">Sub-Nav child item 2</a></li>
+                            <li><a href="#">Sub-Nav child item 3</a></li>
+                            <li><a href="#">Sub-Nav child item 4</a></li>
+                            <li><a href="#">Sub-Nav child item 5</a></li>
+                            <li><a href="#">Sub-Nav child item 6</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Logo evolution</a></li>
+                        <li><a href="#">Henri Nestlé </a></li>
+                        <li><a href="#">Your life in food</a></li>
+                        <li><a href="#">Images</a></li>
+
+                      </ul>
+                    </li>
+                    <li><a href="#">At a glance</a></li>
+                    <li><a href="#">Nestlé worldwide</a></li>
+                    <li><a href="#">Management</a></li>
+                    <li><a href="#">Strategy</a></li>
+                    <li><a href="#">Business principles</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" id="our-stories" data-title="Our Stories" data-description="Here is the description of the Our Stories page.">Our Stories</a>
+                  <ul class="ul-reset data-depth-one hidden" data-depth="1" > 
+                    <li class="parent"><a href="#" id="our-stories">Our Stories 
+                      <span style="">visit this section</span></a></li>
+                    <li><a href="#">Sub-Nav child item 1</a>
+                     <ul class="ul-reset data-depth-two hidden" data-depth="2"> 
+                      <li class="parent"><a href="#">Sub-Nav child item 1<span style="
+                      ">visit this section</span></a>
+                      <li><a href="#">Sub-Nav child item 1</a>
+                        <ul class="ul-reset data-depth-three hidden" data-depth="3"> 
+                          <li class="parent"><a href="#">Sub-Nav child item 1<span style="
+                          ">visit this section</span></a></li>
+                          <li><a href="#">Sub-Nav child item 1</a></li>
+                          <li><a href="#">Sub-Nav child item 2</a></li>
+                          <li><a href="#">Sub-Nav child item 3</a></li>
+                          <li><a href="#">Sub-Nav child item 4</a></li>
+                          <li><a href="#">Sub-Nav child item 5</a></li>
+                          <li><a href="#">Sub-Nav child item 6</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Sub-Nav child item 2</a></li>
+                      <li><a href="#">Sub-Nav child item 3</a></li>
+                      <li><a href="#">Sub-Nav child item 4</a></li>
+                      <li><a href="#">Sub-Nav child item 5</a></li>
+                      <li><a href="#">Sub-Nav child item 6</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Sub-Nav child item 2</a></li>
+                  <li><a href="#">Sub-Nav child item 3</a></li>
+                  <li><a href="#">Sub-Nav child item 4</a></li>
+                  <li><a href="#">Sub-Nav child item 5</a></li>
+                  <li><a href="#">Sub-Nav child item 6</a></li>
+                </ul>
+              </li>
+              <li><a href="#" id="nestle-in-society" data-title="Nestlé in Society" data-description="Here is the description of the Nestlé in Society page.">Nestlé in Society</a>
+                <ul class="ul-reset data-depth-one hidden" data-depth="1"  > 
+                  <li><a class="parent" href="#" id="nestle-in-society" data-title="Nestlé in Society" data-description="Here is the description of the Nestlé in Society page.">Nestlé in Society<span style="
+                  ">visit this section</span></a></li>
+                  <li><a href="#" data-title="Creating Shared Value" data-description="Here is the description of the Creating Shared Value page.">Creating Shared Value</a>
+                   <ul class="ul-reset data-depth-two hidden" data-depth="2"> 
+                    <li class="parent"><a href="#" data-title="Creating Shared Value" data-description="Here is the description of the Creating Shared Value page.">Creating Shared Value<span style="
+                    ">visit this section</span></a>
+                    <li><a href="#"  data-title="Our approach" data-description="Here is the description of the Our approach page.">Our approach</a></li>
+                    <li><a href="#" data-title="Materiality" data-description="Here is the description of the Materiality page.">Materiality</a></li>
+                    <li><a href="#" data-title="Ethical business" data-description="Here is the description of the Ethical business page.">Ethical business</a></li>
+                    <li><a href="#" data-title="Governance & policies" data-description="Here is the description of the Governance & policies page.">Governance & policies</a></li>
+                    <li><a href="#" data-title="Contributing to global goals" data-description="Here is the description of the Contributing to global goals page.">Contributing to global goals</a></li>
+                    <li><a href="#" data-title="Partnerships & collective action" data-description="Here is the description of the Partnerships & collective action page.">Partnerships & collective action</a>
+                      <ul class="ul-reset data-depth-three hidden" data-depth="3"> 
+                        <li class="parent"><a href="#" data-title="Partnerships & collective action" data-description="Here is the description of the Partnerships & collective action page.">Partnerships & collective action<span style="
+                        ">visit this section</span></a>
+                        <li><a href="#">UN Global Compact</a></li>
+                        <li><a href="#">Sub-Nav child item 2</a></li>
+                      </ul></li>
+                    </ul>
+                  </li>
+                  <li><a href="#" data-title="Areas of impact & commitment" data-description="Here is the description of the Areas of impact & commitment page.">Areas of impact & commitment</a>
+                    <ul class="ul-reset data-depth-two hidden" data-depth="2"> 
+                      <li class="parent"><a href="#" data-title="Areas of impact & commitment" data-description="Here is the description of the Areas of impact & commitment page.">Areas of impact & commitment<span style="
+                      ">visit this section</span></a>
+                      <li><a href="#"  data-title="Our commitments" data-description="Here is the description of the Our commitments page.">Our commitments</a></li>
+                      <li><a href="#" data-title="Tastier & healthier food" data-description="Here is the description of the Tastier & healthier food page.">Tastier & healthier food</a>
+                        <ul class="ul-reset data-depth-three hidden" data-depth="3"> 
+                          <li class="parent"><a href="#" data-title="Tastier & healthier food" data-description="Here is the description of the Tastier & healthier food page.">Tastier & healthier food<span style="
+                          ">visit this section</span></a>
+                          <li><a href="#" data-title="Nutritious products" data-description="Here is the description of the Nutritious products page.">Nutritious products</a></li>
+                          <li><a href="#" data-title="Sugar, sodium & fats" data-description="Here is the description of the Sugar, sodium & fats page.">Sugar, sodium & fats</a></li>
+                          <li><a href="#" data-title="Whole grain, fibre & vegetables" data-description="Here is the description of the Whole grain, fibre & vegetables page.">Whole grain, fibre & vegetables</a></li>
+                          <li><a href="#" data-title="Simplifying ingredient lists" data-description="Here is the description of the Simplifying ingredient lists page.">Simplifying ingredient lists</a></li>
+                          <li><a href="#" data-title="Micronutrient fortification" data-description="Here is the description of the Micronutrient fortification page.">Micronutrient fortification</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#" data-title="Healthier lives" data-description="Here is the description of the Healthier lives page.">Healthier lives</a></li>
+                      <li><a href="#" data-title="Governance & policies" data-description="Here is the description of the Nutrition knowledge page.">Nutrition knowledge</a></li>
+                      <li><a href="#" data-title="Rural livelihoods" data-description="Here is the description of the Rural livelihoods page.">Rural livelihoods</a></li>
+                      <li><a href="#" data-title="PHuman rights" data-description="Here is the description of the Human rights page.">Human rights</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Global initiatives</a></li>
+                  <li><a href="#">Raw materials</a></li>
+                  <li><a href="#">Performance & reporting</a></li>
+                  <li><a href="#">Creating Shared Value in action</a></li>
+                </ul>
+              </li>
+              <li><a href="#" id="brands" data-title="Brands" data-description="Here is the description of the Brands page.">Brands</a>
+                <ul class="ul-reset data-depth-one hidden" data-depth="1" > 
+                  <li class="parent">
+                    <a href="#">Brands<span style="">visit this section</span></a>
+                  </li>
+                  <li><a href="#">Sub-Nav child item 1</a>
+                   <ul class="ul-reset data-depth-two hidden" data-depth="2">
+                   <li class="parent">
+                      <a href="#">Sub-Nav child item 1<span style="">visit this section</span></a>
+                    </li> 
+                    <li><a href="#">Sub-Nav child item 1</a>
+                      <ul class="ul-reset data-depth-three hidden" data-depth="3"> 
+                        <li class="parent">
+                          <a href="#">Sub-Nav child item 1<span style="">visit this section</span></a>
+                        </li>
+                        <li><a href="#">Sub-Nav child item 1</a></li>
+                        <li><a href="#">Sub-Nav child item 2</a></li>
+                        <li><a href="#">Sub-Nav child item 3</a></li>
+                        <li><a href="#">Sub-Nav child item 4</a></li>
+                        <li><a href="#">Sub-Nav child item 5</a></li>
+                        <li><a href="#">Sub-Nav child item 6</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Sub-Nav child item 2</a></li>
+                    <li><a href="#">Sub-Nav child item 3</a></li>
+                    <li><a href="#">Sub-Nav child item 4</a></li>
+                    <li><a href="#">Sub-Nav child item 5</a></li>
+                    <li><a href="#">Sub-Nav child item 6</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Sub-Nav child item 2</a></li>
+                <li><a href="#">Sub-Nav child item 3</a></li>
+                <li><a href="#">Sub-Nav child item 4</a></li>
+                <li><a href="#">Sub-Nav child item 5</a></li>
+                <li><a href="#">Sub-Nav child item 6</a></li>
+              </ul>
+            </li>
+            <li><a href="#" id="r-d" data-title="R&D" data-description="Here is the description of the R&D page.">R&D</a>
+              <ul class="ul-reset data-depth-one hidden" data-depth="1" > 
+                <li class="parent">
+                    <a href="#">R&D<span style="">visit this section</span></a>
+                  </li>
+                <li><a href="#">Sub-Nav child item 1</a>
+                 <ul class="ul-reset data-depth-two hidden" data-depth="2"> 
+                  <li class="parent">
+                    <a href="#">Sub-Nav child item 1<span style="">visit this section</span></a>
+                  </li>
+                  <li><a href="#">Sub-Nav child item 1</a>
+                    <ul class="ul-reset data-depth-three hidden" data-depth="3"> 
+                      <li class="parent">
+                        <a href="#">Sub-Nav child item 1<span style="">visit this section</span></a>
+                      </li>
+                      <li><a href="#">Sub-Nav child item 1</a></li>
+                      <li><a href="#">Sub-Nav child item 2</a></li>
+                      <li><a href="#">Sub-Nav child item 3</a></li>
+                      <li><a href="#">Sub-Nav child item 4</a></li>
+                      <li><a href="#">Sub-Nav child item 5</a></li>
+                      <li><a href="#">Sub-Nav child item 6</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Sub-Nav child item 2</a></li>
+                  <li><a href="#">Sub-Nav child item 3</a></li>
+                  <li><a href="#">Sub-Nav child item 4</a></li>
+                  <li><a href="#">Sub-Nav child item 5</a></li>
+                  <li><a href="#">Sub-Nav child item 6</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Sub-Nav child item 2</a></li>
+              <li><a href="#">Sub-Nav child item 3</a></li>
+              <li><a href="#">Sub-Nav child item 4</a></li>
+              <li><a href="#">Sub-Nav child item 5</a></li>
+              <li><a href="#">Sub-Nav child item 6</a></li>
+            </ul>
+          </li>
+          <li><a href="#" id="ask-nestle" ata-title="Ask Nestlé" data-description="Here is the description of the Ask Nestlé page.">Ask Nestlé</a>
+            <ul class="ul-reset data-depth-one hidden" data-depth="1" > 
+              <li class="parent">
+                <a href="#">Ask Nestlé<span style="">visit this section</span></a>
+              </li>
+              <li><a href="#">Sub-Nav child item 1</a>
+               <ul class="ul-reset data-depth-two hidden" data-depth="2"> 
+                <li class="parent">
+                  <a href="#">Sub-Nav child item 1<span style="">visit this section</span></a>
+                </li>
+                <li><a href="#">Sub-Nav child item 1</a>
+                  <ul class="ul-reset data-depth-three hidden" data-depth="3"> 
+                    <li class="parent">
+                      <a href="#">Sub-Nav child item 1<span style="">visit this section</span></a>
+                    </li>
+                    <li><a href="#">Sub-Nav child item 1</a></li>
+                    <li><a href="#">Sub-Nav child item 2</a></li>
+                    <li><a href="#">Sub-Nav child item 3</a></li>
+                    <li><a href="#">Sub-Nav child item 4</a></li>
+                    <li><a href="#">Sub-Nav child item 5</a></li>
+                    <li><a href="#">Sub-Nav child item 6</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Sub-Nav child item 2</a></li>
+                <li><a href="#">Sub-Nav child item 3</a></li>
+                <li><a href="#">Sub-Nav child item 4</a></li>
+                <li><a href="#">Sub-Nav child item 5</a></li>
+                <li><a href="#">Sub-Nav child item 6</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Sub-Nav child item 2</a></li>
+            <li><a href="#">Sub-Nav child item 3</a></li>
+            <li><a href="#">Sub-Nav child item 4</a></li>
+            <li><a href="#">Sub-Nav child item 5</a></li>
+            <li><a href="#">Sub-Nav child item 6</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="cta-bar">
+  <div class="mega-cta3 bg-orange">
+    <a href="#">
+      <img src="img/icon-contact-white.png">
+      <div class="cta-text">
+        <div class="mega-cta--major">Contact us</div>
+        <div class="mega-cta--minor">Get in touch</div>
+      </div>
+    </a>
+  </div>
+  <div class="mega-cta3 bg-green">
+    <a href="#">
+      <img src="img/icon-signup-white.png">
+      <div class="cta-text">
+        <div class="mega-cta--major">Signup</div>
+        <div class="mega-cta--minor">Global Nestlé News</div>
+      </div>
+    </a>
+  </div>
+  <div class="mega-cta3 bg-purple">
+    <a href="#">
+      <img src="img/icon-tellus-white.png">
+      <div class="cta-text">
+        <div class="mega-cta--major">Tell us!</div>
+        <div class="mega-cta--minor">Compliance</div>
+      </div>
+    </a>
+  </div>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</ul>
+
+
+</nav>
+</div>
+</body>
+
+</html>
+
+
