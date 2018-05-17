@@ -172,7 +172,12 @@ position: relative;
       padding: 0.7em 0.7vw;
       font-size: 1em;
       color: #4f4842;
-      text-decoration: none; }
+      text-decoration: none; 
+    }
+
+    .ul-reset li a {
+      max-width: 80%;
+    }
 
 
 
@@ -360,9 +365,29 @@ ul.ul-reset.nav-demo1.clicked {
     background: #93877e;
     }
 
+.nav-main .mega-menu .ul-reset li.children:hover {
+    background: #93877e url(https://www.nestlehealthscience.com/asset-library/PublishingImages/cerebral-palsy/arrow-button.png) no-repeat right !important;
+}
+
+.nav-main .mega-menu .ul-reset li.children.selected:hover {
+    background: #d2cecd url(https://www.nestlehealthscience.com/asset-library/PublishingImages/cerebral-palsy/arrow-button.png) no-repeat right !important;
+}
+
+.nav-main .mega-menu .ul-reset li.selected:hover>a{
+    color: #796E65;
+  }
+
+
+
+.nav-main .mega-menu .ul-reset  li.selected.children{
+    background: #d2cecd url(https://www.nestlehealthscience.com/asset-library/PublishingImages/cerebral-palsy/arrow-button.png) no-repeat right !important;
+}
+
 
 .mega-menu a:hover {
   color: #2d6a91; }
+
+
 
 ul.ul-reset {
   background: none;
@@ -505,11 +530,6 @@ li.selected {
     background: #f9f9f8 !important
 }
 
-.data-depth-zero>li.selected {
-    background: inherit !important;
-}
-
-
 .data-depth-zero>li.selected>a:hover{
     background: inherit;
     color: inherit;
@@ -561,19 +581,13 @@ li.selected {
     z-index: 120 !important;
 }
 
-
-
-
 .ul-reset  li.selected{
     background: #d2cecd !important;
 }
 
-
-
-.ul-reset  li.selected.children{
-    background: #d2cecd url(https://www.nestlehealthscience.com/asset-library/PublishingImages/cerebral-palsy/arrow-button.png) no-repeat right !important;
+.data-depth-zero>li.selected {
+    background: inherit !important;
 }
-
 
 
   @media (max-width: 950px) {

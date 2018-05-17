@@ -295,9 +295,9 @@ function onLabelClick(event, step, marginPlus, marginMinus){
     
   }
   else {
-    event.children("ul").addClass('hidden').length
+    $(' .data-depth-two,.data-depth-three, .data-depth-four').addClass('hidden').addClass('hidden').find("li a").css("opacity","inherit");
     step-=1;
-     //step=depthMinus(step, marginPlus, marginMinus);
+    event.children("ul").removeClass('hidden').length;
  }
  return step;
 }
