@@ -255,10 +255,7 @@
      display: none;
 }
  .nav-container {
-     background: #f0eeed;
-     background: #f9f9f8;
      margin: 0 auto;
-     width: 80%;
      max-width: 1540px;
      -webkit-box-sizing: content-box;
      box-sizing: content-box;
@@ -266,7 +263,7 @@
      pointer-events: all;
 }
  .nav-padding {
-     padding: 1em 2em 0em 2em;
+    padding: 1em 2em 0em 2em;
 }
  .mega-menu {
      display: none;
@@ -275,6 +272,7 @@
      text-align: left;
      width: 100%;
      pointer-events: none;
+     background: #f9f9f8;
 }
  ul.ul-reset.nav-demo1 {
      display: none;
@@ -288,6 +286,10 @@
      padding: 0.5em 0.5em 0.5em 0.5em;
      margin-bottom: 0;
      text-align: right;
+}
+.cta-bar .cta-bar-container{
+     margin: 0 auto;
+     max-width: 1540px;
 }
  .cta-bar a.button {
      margin: 0;
@@ -580,6 +582,7 @@
      margin-left: 0% !important;
      width: 28% !important;
      top: 0%;
+     overflow: visible !important;
 }
  .nav-sub {
      margin-top: 30px;
@@ -665,7 +668,7 @@
  .ul-reset li:first-child{
      border-bottom: 1px solid #f0eeed;
      border-top: 1px solid #af9e97;
-     margin-bottom: 15px;
+     padding-bottom: 15px;
 }
  .data-depth-zero .selected{
      background: inherit;
