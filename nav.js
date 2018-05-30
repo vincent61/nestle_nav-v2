@@ -20,7 +20,7 @@ $(document).ready(function(){
        $(this).toggleClass('clicked');
        $(this).addClass('selected');
        childNav.addClass('selected');
-       $('.selected .data-depth-one').removeClass('hidden');
+       $('.selected .data-depth-1').removeClass('hidden');
        initializeMegaMenuHeight(currentStatus);
        currentStatus.step=0;
      }
@@ -29,7 +29,7 @@ $(document).ready(function(){
       $(this).toggleClass('clicked');
       $(this).addClass('selected');
       $("#"+$(this).data().name).parent().addClass('selected');
-      $('.selected .data-depth-one').removeClass('hidden');
+      $('.selected .data-depth-1').removeClass('hidden');
 
       showMegaMenu(currentStatus);
       initializeMegaMenuHeight(currentStatus);
@@ -95,7 +95,7 @@ var navSetup = function () {
 
 /*------------------ Add arrow when sublink has children -----------*/
 function addChildrenSymbols (){
-  $(".data-depth-one li,.data-depth-two li,.data-depth-three li").each(function( index ) {
+  $(".data-depth-1 li,.data-depth-2 li,.data-depth-3 li").each(function( index ) {
     if($(this).find("ul").length){
       $(this).addClass('children');
 
@@ -152,7 +152,7 @@ function showMegaMenu(currentStatus){
 /*------------------ Reinitialize Mega Menu -----------*/
  function resetMegaMenu(){
    $('.selected').removeClass('selected');
-   $('.data-depth-one, .data-depth-two,.data-depth-three, .data-depth-four').addClass('hidden');
+   $('.data-depth-1, .data-depth-2,.data-depth-3, .data-depth-4').addClass('hidden');
  }
 
 /*------------------ Check if Sublink has Children -----------*/
@@ -164,9 +164,12 @@ function showMegaMenu(currentStatus){
 function onLabelClick(event, marginPlus, marginMinus, currentStatus){
   event.parent().find("li").removeClass("selected");
   event.addClass("selected");
-  var clickedStep = event.parent()[0].dataset.depth;
-  console.log("clickedStep "+clickedStep);
-  console.log("step "+currentStatus.step);
+  //var clickedStep = event.parent()[0].dataset.depth;
+  var currentLevelClass = event.parent().attr('class');
+  var clickedStep = parseInt(currentLevelClass.substr(currentLevelClass.length - 1));
+
+  //console.log("clickedStep "+clickedStep);
+  //console.log("step "+currentStatus.step);
   if(clickedStep>currentStatus.step)
   {
     if(event.children("ul").removeClass('hidden').length){
@@ -178,19 +181,19 @@ function onLabelClick(event, marginPlus, marginMinus, currentStatus){
   }
   else if(clickedStep==currentStatus.step){
     if(currentStatus.step==1){
-      $(' .data-depth-two,.data-depth-three, .data-depth-four').addClass('hidden').addClass('hidden').find("li a").css("opacity","inherit");
+      $(' .data-depth-2,.data-depth-3, .data-depth-4').addClass('hidden').addClass('hidden').find("li a").css("opacity","inherit");
       if(hasChildren(event)){
         updateMenuHeight(event.children("ul"),currentStatus, 0);
       }
     }
     if(currentStatus.step==2){
-      $('.data-depth-three, .data-depth-four').addClass('hidden').addClass('hidden').find("li a").css("opacity","inherit");
+      $('.data-depth-3, .data-depth-4').addClass('hidden').addClass('hidden').find("li a").css("opacity","inherit");
       updateMenuHeight(event.children("ul"),currentStatus, 0);
     }
     event.children("ul").removeClass('hidden').length   
   }
   else {
-    $(' .data-depth-two,.data-depth-three, .data-depth-four').addClass('hidden').addClass('hidden').find("li a").css("opacity","inherit");
+    $(' .data-depth-2,.data-depth-3, .data-depth-4').addClass('hidden').addClass('hidden').find("li a").css("opacity","inherit");
     if(currentStatus.step==2 && clickedStep==1){
       currentStatus.step-=2;
       updateMenuHeight(event.children("ul"),currentStatus, -2);
@@ -221,7 +224,7 @@ function initializeMegaMenuHeight(currentStatus){
 
 /*------------------ Manage height of Mega menu when sub link is clicked -----------*/
 function updateMenuHeight(children, currentStatus, deepness){
-      console.log("before : "+currentStatus.heights);
+      //console.log("before : "+currentStatus.heights);
       if(deepness==0){
         currentStatus.heights.pop();
       }
@@ -241,7 +244,7 @@ function updateMenuHeight(children, currentStatus, deepness){
         currentStatus.heights.push(currentStatus.heights[currentStatus.heights.length-1]);
       }
       }
-    console.log("after : "+currentStatus.heights);
+    //console.log("after : "+currentStatus.heights);
     //$(".data-depth-zero").height(currentStatus.heights[currentStatus.heights.length-1]+20);
 
     $(".data-depth-zero").animate({
@@ -265,13 +268,13 @@ function rightColumn(columnDepth){
 function leftColumn(currentStatus){
   var columnDepth;
   if(currentStatus.step==1){
-    columnDepth=".data-depth-one";
+    columnDepth=".data-depth-1";
   }
   if(currentStatus.step==2){
-    columnDepth=".data-depth-two";
+    columnDepth=".data-depth-2";
   }
   if(currentStatus.step==3){
-    columnDepth=".data-depth-three";
+    columnDepth=".data-depth-3";
   }
   $(columnDepth).children('li').each(function( index ) {
     $(this).find('a').first().animate({ left:0 });
@@ -281,19 +284,19 @@ function leftColumn(currentStatus){
 /*
 function resetColumnOpacity(currentStatus){
   if(currentStatus.step==1){
-    columnDepth=".data-depth-one";
+    columnDepth=".data-depth-1";
   }
   if(currentStatus.step==2){
-    columnDepth=".data-depth-two";
+    columnDepth=".data-depth-2";
   }
   if(currentStatus.step==3){
-    columnDepth=".data-depth-three";
+    columnDepth=".data-depth-3";
   }
   $(columnDepth).find("li a").css("opacity","inherit");
 }*/
 /*
 function leftColumnAll(){
-  $(".data-depth-one").find('li').each(function( index ) {
+  $(".data-depth-1").find('li').each(function( index ) {
     $(this).find('a').first().animate({ left:0 });
   });
 }*/
@@ -301,15 +304,15 @@ function leftColumnAll(){
 /*
 function manageRightLeftGravity(currentStatus){
  if(currentStatus.step==0){
-  rightColumn(".data-depth-one");
+  rightColumn(".data-depth-1");
 }
 if(currentStatus.step==1){
   rightColumn(".data-depth-two");
 }
 if(currentStatus.step==2){
-  rightColumn(".data-depth-three");
+  rightColumn(".data-depth-3");
 }
 if(currentStatus.step==3){
-  rightColumn(".data-depth-four");
+  rightColumn(".data-depth-4");
 }
 }*/
