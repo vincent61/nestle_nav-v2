@@ -6,7 +6,7 @@ $(document).ready(function(){
   /*------------------ On Main Menu label click -----------*/
   $(".droppable").click(function(){
 
-    if($( window ).width()<950){
+    if($( window ).width()>950){
       if(!$(this).hasClass('clicked')){
         event.preventDefault();
       } else {
@@ -45,7 +45,7 @@ $(document).ready(function(){
       }
     }
     else{
-      
+
     }
   });
   $(".mega-menu a").click(function(){
