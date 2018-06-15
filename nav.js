@@ -5,41 +5,47 @@ $(document).ready(function(){
   var firstLoad =true;
   /*------------------ On Main Menu label click -----------*/
   $(".droppable").click(function(){
-    if(!$(this).hasClass('clicked')){
-      event.preventDefault();
-    } else {
-      return true;
-    };
-    var childNav = $("#"+$(this).data().name).parent();
-    /*------------------ Main Menu label reclick when mega menu already open-----------*/
-    if($(this).parent().parent().children().find('.clicked').length){
-       //console.log('reclicked')
-       $('.droppable').removeClass('clicked');
-       $("#meta-description").html($("#"+$(this).data().name).data("description")); 
-       resetMegaMenu();
-       $(this).toggleClass('clicked');
-       $(this).addClass('selected');
-       childNav.addClass('selected');
-       $('.selected .data-depth-1').removeClass('hidden');
-       initializeMegaMenuHeight(currentStatus);
-       currentStatus.step=0;
-     }
-     /*------------------ Main Menu label click for first time-----------*/
-     else{
-      $(this).toggleClass('clicked');
-      $(this).addClass('selected');
-      $("#"+$(this).data().name).parent().addClass('selected');
-      $('.selected .data-depth-1').removeClass('hidden');
 
-      showMegaMenu(currentStatus);
-      initializeMegaMenuHeight(currentStatus);
+    if($( window ).width()<950){
+      if(!$(this).hasClass('clicked')){
+        event.preventDefault();
+      } else {
+        return true;
+      };
+      var childNav = $("#"+$(this).data().name).parent();
+      /*------------------ Main Menu label reclick when mega menu already open-----------*/
+      if($(this).parent().parent().children().find('.clicked').length){
+         //console.log('reclicked')
+         $('.droppable').removeClass('clicked');
+         $("#meta-description").html($("#"+$(this).data().name).data("description")); 
+         resetMegaMenu();
+         $(this).toggleClass('clicked');
+         $(this).addClass('selected');
+         childNav.addClass('selected');
+         $('.selected .data-depth-1').removeClass('hidden');
+         initializeMegaMenuHeight(currentStatus);
+         currentStatus.step=0;
+       }
+       /*------------------ Main Menu label click for first time-----------*/
+       else{
+        $(this).toggleClass('clicked');
+        $(this).addClass('selected');
+        $("#"+$(this).data().name).parent().addClass('selected');
+        $('.selected .data-depth-1').removeClass('hidden');
 
-      $('.meta-mega').show();
-      $("#meta-description").html($("#"+$(this).data().name).data("description"));
-      if(firstLoad)
-        addChildrenSymbols();
-      firstLoad=false;
-      event.stopPropagation();
+        showMegaMenu(currentStatus);
+        initializeMegaMenuHeight(currentStatus);
+
+        $('.meta-mega').show();
+        $("#meta-description").html($("#"+$(this).data().name).data("description"));
+        if(firstLoad)
+          addChildrenSymbols();
+        firstLoad=false;
+        event.stopPropagation();
+      }
+    }
+    else{
+      
     }
   });
   $(".mega-menu a").click(function(){
@@ -60,9 +66,19 @@ $(document).ready(function(){
     onLabelClick($(event.target).parent(), marginPlus, marginMinus, currentStatus);
   });
    /* ----------------- Close button click event ------------------*/
-  $(".closer a img").click(function() {
+  $(".nav-padding .closer a img").click(function() {
     hideMegaMenu();
   });
+
+  $(".language-select").click(function(){
+    $(this).toggleClass('rotate-arrow');
+    $(".language-panel").slideToggle();
+  });
+  $(".language-panel .closer a").click(function(){
+    $(this).toggleClass('rotate-arrow');
+    $(".language-panel").slideToggle();
+  });
+
 });
 
 /*------------------ Setup Mega Menu -----------*/
@@ -91,6 +107,7 @@ var navSetup = function () {
       $('#nav-site').addClass('open');
     }
   });
+
 };
 
 /*------------------ Add arrow when sublink has children -----------*/
@@ -115,9 +132,6 @@ function depthPlus (currentStatus, marginPlus, marginMinus){
   manageRightLeftGravity(currentStatus)
   step+=1;
 }
-
-
-
 
 /*------------------ Back to parent -----------*/
 function depthMinus (currentStatus, marginPlus, marginMinus){
@@ -251,6 +265,7 @@ function updateMenuHeight(children, currentStatus, deepness){
             height: currentStatus.heights[currentStatus.heights.length-1]+20
         }, 200, "linear");
 }
+
 
 
 /*
