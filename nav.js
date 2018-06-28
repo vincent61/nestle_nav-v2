@@ -3,7 +3,15 @@ $(document).ready(function(){
   var marginMinus = 50;
   var currentStatus = {heights : [], step:0};
   var firstLoad =true;
+
   /*------------------ On Main Menu label click -----------*/
+  if($( window ).width()>950){
+    window.device = "desktop";
+  }
+  else{
+    window.device = "mobile";
+  }
+  console.log(window.device )
   $(".droppable").click(function(){
 
     if($( window ).width()>950){
@@ -45,10 +53,50 @@ $(document).ready(function(){
       }
     }
     else{
-
+      
     }
   });
+
+
+
+  $(".kitkat-menu").click(function(){
+    if(!$(".wrap").hasClass('mega-menu-opened')){
+    $(".wrap").toggleClass('mega-menu-opened');
+    $(".nav-underlay").toggle();
+    addChildrenSymbols();
+    $('.meta-mega').show();
+    firstLoad=false;
+    event.stopPropagation();
+  }
+  else{
+      $(".wrap").toggleClass('mega-menu-opened');
+      $(".nav-underlay").toggle();
+  }
+  });
+
+
+  $(".search-menu").click(function(){
+    if(!$(".wrap").hasClass('search-menu-opened')){
+    $(".wrap").toggleClass('search-menu-opened');
+    $(".nav-underlay").toggle();
+    addChildrenSymbols();
+    $('.search-menu-panel').show();
+    firstLoad=false;
+    event.stopPropagation();
+  }
+  else{
+      $(".wrap").toggleClass('search-menu-opened');
+      $(".nav-underlay").toggle();
+  }
+  });
+
+
+
   $(".mega-menu a").click(function(){
+    event.stopPropagation();
+  });
+
+  $(".search-menu a").click(function(){
     event.stopPropagation();
   });
 
@@ -60,14 +108,17 @@ $(document).ready(function(){
 
   /* ----------------- On Mega Menu sublink Clicked ------------------*/
   $(".ul-reset li").click(function(event) {
-    onLabelClick($(event.target), marginPlus, marginMinus,currentStatus);
+        onLabelClick($(event.target), marginPlus, marginMinus,currentStatus);
   });
   $(".ul-reset li a").click(function(event) {
-    onLabelClick($(event.target).parent(), marginPlus, marginMinus, currentStatus);
+        onLabelClick($(event.target).parent(), marginPlus, marginMinus, currentStatus);
   });
    /* ----------------- Close button click event ------------------*/
-  $(".nav-padding .closer a img").click(function() {
+  $(".mega-menu .nav-padding .closer a img").click(function() {
     hideMegaMenu();
+  });
+  $(".search-menu-panel .nav-padding .closer a img").click(function() {
+    hideSearchMenu();
   });
 
   $(".language-select").click(function(){
@@ -78,8 +129,40 @@ $(document).ready(function(){
     $(this).toggleClass('rotate-arrow');
     $(".language-panel").slideToggle();
   });
-
+    
+    resize(currentStatus);
 });
+
+$(window).resize(function(currentStatus) {
+    resize(currentStatus);
+});
+
+function resize(currentStatus){ 
+    initializeMegaMenuHeight(currentStatus)
+    if($(window).width() < 950)
+    {
+      //Mobile
+      if(window.device=="desktop"){
+        window.device="mobile";
+        //console.log(window.device);
+
+      }
+      $('.nav-underlay').remove().insertBefore($('.header-site'));
+    }
+    else
+    {
+      //Desktop
+      if(window.device=="mobile"){
+        window.device="desktop";
+        //console.log(window.device);
+        hideMegaMenu();
+        hideSearchMenu();
+      }
+      $('.nav-underlay').remove().insertBefore($('.nav-main'));
+    }
+}
+
+
 
 /*------------------ Setup Mega Menu -----------*/
 var navSetup = function () {
@@ -112,10 +195,13 @@ var navSetup = function () {
 
 /*------------------ Add arrow when sublink has children -----------*/
 function addChildrenSymbols (){
-  $(".data-depth-1 li,.data-depth-2 li,.data-depth-3 li").each(function( index ) {
+  $(".data-depth-0 li, .data-depth-1 li,.data-depth-2 li,.data-depth-3 li").each(function( index ) {
     if($(this).find("ul").length){
       $(this).addClass('children');
-
+       $(this).children('a').removeAttr("href");
+       if($(this).children('a').children('span').length==0){
+        $(this).children('a').append("<span>click to collapse</span>");
+       }
     }
   });
 }
@@ -151,7 +237,8 @@ function depthMinus (currentStatus, marginPlus, marginMinus){
 function hideMegaMenu(){
   $('.droppable').removeClass('clicked');
   $(".wrap").removeClass('mega-menu-opened');
-  $(".nav-underlay").toggle();
+  if($('.nav-underlay').css('display') != 'none')
+    $(".nav-underlay").toggle();
   resetMegaMenu();
 }
 
@@ -162,6 +249,22 @@ function showMegaMenu(currentStatus){
   $(".nav-underlay").toggle();
   step=0;
  }
+
+ /*------------------ Hide Search Menu -----------*/
+function hideSearchMenu(){
+  $('.droppable').removeClass('clicked');
+  $(".wrap").removeClass('search-menu-opened');
+  if($('.nav-underlay').css('display') != 'none')
+    $(".nav-underlay").toggle();
+}
+
+/*------------------ Show Mega Menu -----------*/
+function showSearchMenu(currentStatus){
+  $('.meta-mega').hide();
+  $(".wrap").addClass('search-menu-opened');
+  $(".nav-underlay").toggle();
+ }
+
 
 /*------------------ Reinitialize Mega Menu -----------*/
  function resetMegaMenu(){
@@ -176,49 +279,104 @@ function showMegaMenu(currentStatus){
 
 /*------------------ On Sub link label click event -----------*/
 function onLabelClick(event, marginPlus, marginMinus, currentStatus){
-  event.parent().find("li").removeClass("selected");
-  event.addClass("selected");
+ 
   //var clickedStep = event.parent()[0].dataset.depth;
   var currentLevelClass = event.parent().attr('class');
   var clickedStep = parseInt(currentLevelClass.substr(currentLevelClass.length - 1));
+  var isMobileDevice = $(window).width() <= 950;
 
-  //console.log("clickedStep "+clickedStep);
-  //console.log("step "+currentStatus.step);
-  if(clickedStep>currentStatus.step)
+  console.log("clickedStep "+clickedStep);
+  console.log("step "+currentStatus.step);
+  if(event.hasClass("selected") && isMobileDevice)
   {
-    if(event.children("ul").removeClass('hidden').length){
-      if(hasChildren(event)){
-        currentStatus.step+=1;
-        updateMenuHeight(event.children("ul"),currentStatus, 1);
+    console.log("selected");
+    console.log(event);
+    event.removeClass('selected');
+    event.find("ul").addClass('hidden');
+
+  }
+  else
+  {
+    if(clickedStep>currentStatus.step)
+    {
+      if(event.children("ul").removeClass('hidden').length){
+        if(hasChildren(event)){
+          currentStatus.step+=1;
+          updateMenuHeight(event.children("ul"),currentStatus, 1);
+        }
       }
     }
-  }
-  else if(clickedStep==currentStatus.step){
-    if(currentStatus.step==1){
-      $(' .data-depth-2,.data-depth-3, .data-depth-4').addClass('hidden').addClass('hidden').find("li a").css("opacity","inherit");
-      if(hasChildren(event)){
-        updateMenuHeight(event.children("ul"),currentStatus, 0);
+    else if(clickedStep==currentStatus.step){
+      if(isMobileDevice){
+        if(currentStatus.step==0){
+          $(' .data-depth-1, .data-depth-2, .data-depth-3, .data-depth-4').addClass('hidden').find("li a").css("opacity","inherit");
+          $(' .data-depth-0, .data-depth-1, .data-depth-2, .data-depth-3, .data-depth-4').find(".selected").removeClass('selected');
+          if(hasChildren(event)){
+            updateMenuHeight(event.children("ul"),currentStatus, 0);
+          }
+        }
+        if(currentStatus.step==1){
+          $(' .data-depth-2, .data-depth-3, .data-depth-4').addClass('hidden').find("li a").css("opacity","inherit");
+          $(' .data-depth-1, .data-depth-2, .data-depth-3, .data-depth-4').find(".selected").removeClass('selected');
+          if(hasChildren(event)){
+            updateMenuHeight(event.children("ul"),currentStatus, 0);
+          }
+        }
+        if(currentStatus.step==2){
+          $('.data-depth-2, .data-depth-3, .data-depth-4').addClass('hidden').find("li a").css("opacity","inherit");
+          $('.data-depth-2, .data-depth-3, .data-depth-4').find(".selected").removeClass('selected');
+          updateMenuHeight(event.children("ul"),currentStatus, 0);
+        }
+        event.children("ul").removeClass('hidden').length   
       }
+      else{
+         if(currentStatus.step==1){
+          $(' .data-depth-2,.data-depth-3, .data-depth-4').addClass('hidden').find("li a").css("opacity","inherit");
+          $(' .data-depth-1,.data-depth-2,.data-depth-3, .data-depth-4').find(".selected").removeClass('selected');
+          if(hasChildren(event)){
+            updateMenuHeight(event.children("ul"),currentStatus, 0);
+          }
+        }
+        if(currentStatus.step==2){
+          $('.data-depth-3, .data-depth-4').addClass('hidden').find("li a").css("opacity","inherit");
+          $('.data-depth-2, .data-depth-3, .data-depth-4').find(".selected").removeClass('selected');
+          updateMenuHeight(event.children("ul"),currentStatus, 0);
+        }
+        event.children("ul").removeClass('hidden').length   
+      }
+      
     }
-    if(currentStatus.step==2){
-      $('.data-depth-3, .data-depth-4').addClass('hidden').addClass('hidden').find("li a").css("opacity","inherit");
-      updateMenuHeight(event.children("ul"),currentStatus, 0);
+    else {
+      
+      if(clickedStep==0){
+        $(' .data-depth-0, .data-depth-1, .data-depth-2, .data-depth-3, .data-depth-4').find(".selected").removeClass('selected');
+        $(' .data-depth-1, .data-depth-2, .data-depth-3, .data-depth-4').addClass('hidden').find("li a").css("opacity","inherit");
+      }
+      else if(clickedStep==1){
+        $(' .data-depth-1, .data-depth-2, .data-depth-3, .data-depth-4').find(".selected").removeClass('selected');
+        $(' .data-depth-2, .data-depth-3, .data-depth-4').addClass('hidden').find("li a").css("opacity","inherit");
+      }
+      else if(clickedStep==2){
+        $(' .data-depth-2, .data-depth-3, .data-depth-4').find(".selected").removeClass('selected');
+        $(' .data-depth-3, .data-depth-4').addClass('hidden').find("li a").css("opacity","inherit");
+      }
+      if(currentStatus.step==2 && clickedStep==1){
+        currentStatus.step-=2;
+        updateMenuHeight(event.children("ul"),currentStatus, -2);
+      }
+      else{
+        currentStatus.step-=1;
+        updateMenuHeight(event.children("ul"),currentStatus, -1);
+      }
+      event.children("ul").toggleClass('hidden').length;
     }
-    event.children("ul").removeClass('hidden').length   
+     if($(window).width() > 950){
+      event.parent().find("li").removeClass("selected");
+    }
+    event.addClass("selected");
   }
-  else {
-    $(' .data-depth-2,.data-depth-3, .data-depth-4').addClass('hidden').addClass('hidden').find("li a").css("opacity","inherit");
-    if(currentStatus.step==2 && clickedStep==1){
-      currentStatus.step-=2;
-      updateMenuHeight(event.children("ul"),currentStatus, -2);
-    }
-    else{
-      currentStatus.step-=1;
-      updateMenuHeight(event.children("ul"),currentStatus, -1);
-    }
-    event.children("ul").removeClass('hidden').length;
-    
-  }
+  
+     
 }
 
 /*------------------ Manage initial height of Mega menu when opening -----------*/
@@ -226,13 +384,13 @@ function initializeMegaMenuHeight(currentStatus){
   currentStatus.heights=[]
   max=0;
   //console.log("before : "+currentStatus.heights);
-  $(".data-depth-zero>li.selected").children(".ul-reset").each(function() {
+  $(".data-depth-0>li.selected").children(".ul-reset").each(function() {
    if(max<$(this).find(".ul-reset").height()){
     max = $(this).find(".ul-reset").height();
   }
 });
-  currentStatus.heights.push($(".data-depth-zero>li.selected").children(".ul-reset").height());
-  $(".data-depth-zero").height(currentStatus.heights[currentStatus.heights.length-1]+20);
+  currentStatus.heights.push($(".data-depth-0>li.selected").children(".ul-reset").height());
+  $(".data-depth-0").height(currentStatus.heights[currentStatus.heights.length-1]+20);
   //console.log("after : "+currentStatus.heights);
 }
 
@@ -258,10 +416,7 @@ function updateMenuHeight(children, currentStatus, deepness){
         currentStatus.heights.push(currentStatus.heights[currentStatus.heights.length-1]);
       }
       }
-    //console.log("after : "+currentStatus.heights);
-    //$(".data-depth-zero").height(currentStatus.heights[currentStatus.heights.length-1]+20);
-
-    $(".data-depth-zero").animate({
+    $(".data-depth-0").animate({
             height: currentStatus.heights[currentStatus.heights.length-1]+20
         }, 200, "linear");
 }
@@ -331,3 +486,4 @@ if(currentStatus.step==3){
   rightColumn(".data-depth-4");
 }
 }*/
+
